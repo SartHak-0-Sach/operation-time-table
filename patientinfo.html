@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="banner">
+        <span class="section-left">
+        <a href="emailto:">hospital.support@gmail.com</a>
+        <a href="tel:">+(110)-2554-1125</a>
+        </span>
+        <span class="section-right">
+        <a href="#"title="Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#"title="Instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#"title="Twitter"><i class="fa fa-twitter"></i></a>
+        </span>
+        </div>
+        
+        <div class="logo parallelogram">
+        <span class="skew-fix"><img src="logo.jpg" alt="O.T.T"><b><p style="margin-left: 40px;">OPERATION TIME TABLE</p></b></span>
+        </div>
+        
+        <div class="topnav" id="myTopnav">
+        <a href="#" class="active">HOME</a>
+        <a href="#singup">SIGNUP</a>
+        <a href="#login">LOGIN</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#about">ABOUT</a>
+        <a href="#time-table">TIME-TABLE</a>
+        <a href="#" title="SignIn" style="float:right;"><i class="fa fa-user"></i></a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </header>
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+	width: 100%;
+	height:100%;
+  color: black;
+	
+	background: white;
+}
+
+textarea { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: black;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+textarea:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+    </style>
+    <br><br>
+<section style="text-align: center; margin-left: 40px; margin-right: 40px;">
+    <h1><u>DETAILS OF PATIENT</u>:-</h1>
+
+<br>
+
+<div><h2 style="display: inline;"><u>Name</u>:- </h2><p style="display: inline;">Sanjay Singhania</p><br><br></div>
+<div style="margin-left: -170px;"><h2 style="display: inline;"><u>Age</u>:- </h2><p style="display: inline;">34</p><br><br></div>
+<div style="margin-left: -50px;"><h2 style="display: inline;"><u>Sex</u>:- </h2><p style="display: inline;">Male</p></div>
+
+<br><br>
+
+<div><h2 style="display: inline;"><u>Complaints</u>:-</h2></div>
+        <textarea id="additionalInfo" style="width: 400px; height: 60px; display: inline;" title="Complaints" placeholder="Enter your complaints here">Intense colicky pain in right hypochondrium since 2 days.</textarea>
+
+<br><br>
+
+<h2><u>Investigations</u>:-</h2>
+<label>
+    <div class="wrapper">
+        <input type="radio" name="selection" value="specific" onchange="toggleTextArea(this)" id="option-1">
+        <input type="radio" name="selection" value="other" onchange="toggleTextArea(this)" id="option-2">
+          <label for="option-1" class="option option-1">
+            <div class="dot"></div>
+             <span>YES</span>
+             </label>
+          <label for="option-2" class="option option-2">
+            <div class="dot"></div>
+             <span>NO</span>
+          </label>
+    </div>
+
+    <div id="textAreaContainer" style="display: none;">
+      <div><h2 style="display: inline;"><u>Enumerate:-</u></h2></div>
+        <textarea id="additionalInfo" style="width: 400px; height: 50px; display: inline;">Confirmed with CT abdomen</textarea>
+      </div>
+
+      <div id="textContainer" style="display: none;">
+        <div><h2 style="display: inline;"><u>Write investigations here:-</u></h2></div>
+          <textarea id="additionalInfo" style="width: 400px; height: 50px; display: inline;"></textarea>
+        </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700&5isplay=swap');
+
+.wrapper{
+  display: inline-flex;
+  height: 100px;
+  width: 400px;
+  padding: 20px 15px;
+}
+.wrapper .option{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+.wrapper .option .dot{
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+  border-color: #0069d9;
+  background: #0069d9;
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot{
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.wrapper .option span{
+  font-size: 20px;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+  color: #fff;
+}
+    </style>
+  
+  <script>
+    function toggleTextArea(radio) {
+      var textAreaContainer = document.getElementById("textAreaContainer");
+      textAreaContainer.style.display = radio.value === "specific" ? "block" : "none";
+      var textContainer = document.getElementById("textContainer");
+      textContainer.style.display = radio.value === "other" ? "block" : "none";
+
+    }
+  </script>
+<br><br>
+<div><h2 style="display: inline;"><u>Diagnosis</u>:-</h2></div>
+        <textarea id="additionalInfo" style="width: 400px; height: 50px; display: inline;">Acute cholecystitis</textarea>
+
+        <br><br>
+        <div>
+<div><h2 style="display: inline;"><u>History of Presenting Illness</u>:-</h2></div>
+        <textarea id="additionalInfo" style="width: 400px; height: 100px; display: inline;">The patient had on and off colicky pain in the right hyponchondrium since 6 months, and an acute episode precipipated 2 days ago.</textarea>
+      </div>
+
+<br>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <button class="custom-btn btn-2 btn2" type="submit" id="patientButton">NEXT</button>
+</div>
+
+<style>
+    .custom-btn {
+        width: 130px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+         7px 7px 20px 0px rgba(0,0,0,.1),
+         4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+      }
+      
+      .btn-2 {
+        background: rgb(96,9,240);
+        background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+        border: none;
+        
+      }
+      .btn-2:before {
+        height: 0%;
+        width: 2px;
+      }
+      .btn-2:hover {
+        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+      }
+</style>
+
+<script>
+    var button = document.getElementById("patientButton");
+    button.addEventListener("click", function() {
+      window.location.href = "next_page.html";
+    });
+  </script>
+
+</section>
+
+<footer>
+  <div class="column">
+  <a class="footer_title">OUR COMPANY</a>
+  <a>Get your surgeries planned right on time with our operations time table application.</a>
+  <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" title="Instagram"><i class="fa fa-instagram"></i></a>
+  <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+  </div>
+  <div class="column">
+  <a class="footer_title">OTHER INFO</a>
+  <a href="#">Privacy Policy</a>
+  <a href="#">Terms & Conditions</a>
+  <a href="#">Contact Us</a>
+  </div>
+  <div class="column">
+  <a class="footer_title">MORE ABOUT US</a>
+  <a href="">Our Services</a>
+  <a href="">Our Blog</a>
+  <a href="">Our Team</a>
+  <a href="">About Us</a>
+  </div>
+  <div class="column">
+  <a class="footer_title">LATEST NEWS</a>
+  <a href="" title="Lorem ipsum dolor sit amet"><img src="https://source.unsplash.com/50x50/?green,trees" alt="img"></a>
+  <a href="" title="Lorem ipsum dolor sit amet"><img src="https://source.unsplash.com/50x50/?green,tree" alt="img"></a>
+  <a href="" title="Lorem ipsum dolor sit amet"><img src="https://source.unsplash.com/50x50/?green,plant" alt="img"></a>
+  <a href="" title="Lorem ipsum dolor sit amet"><img src="https://source.unsplash.com/50x50/?green,forest" alt="img"></a>
+  <a href="" title="Lorem ipsum dolor sit amet"><img src="https://source.unsplash.com/50x50/?green,afforestation" alt="img"></a>
+  </div>
+  <div class="column">
+  <a class="footer_title">GET IN TOUCH</a>
+  <a title="Address"><i class="fa fa-map-marker"></i> Building No.7, Chinchpokli Bandar, Khaogali</a>
+  <a href="emailto:" title="Email"><i class="fa fa-envelope"></i> hospital_support@gmail.com</a>
+  <a href="tel:" title="Contact"><i class="fa fa-phone"></i> +(110)-2554-1125</a>
+  </div>
+  
+  <div class="sub-footer">
+  © CopyRights 2021 Company_name || All rights reserved
+  </div>
+  </footer>
+  
+  <script src="index.js"></script>
+
+</body>
+</html>
